@@ -1,396 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SR Creative Hub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta name="description" content="SR Creative Hub – Creative Design, Animation & Digital Experiences">
+  <title>SR Creative Hub — Design. Motion. Digital.</title>
+  <meta name="description" content="SR Creative Hub is a creative agency crafting premium digital experiences through design, motion, and technology." />
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================
-   GLOBAL RESET
-========================= */
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: #ffffff;
-  overflow-x: hidden;
-  background: #050714;
-}
-
-/* =========================
-   GALAXY BACKGROUND (REAL)
-========================= */
-
-/* Deep space gradient */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 10%, rgba(120,140,255,.18), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(90,120,255,.12), transparent 45%),
-    radial-gradient(circle at bottom, #0b1020, #050714 70%);
-  z-index: -3;
-}
-
-/* Stars layer */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars.png");
-  background-size: 1200px;
-  opacity: 0.35;
-  animation: starsMove 180s linear infinite;
-  z-index: -2;
-}
-
-@keyframes starsMove {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-2000px); }
-}
-
-/* =========================
-   NAVBAR
-========================= */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 80px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-}
-
-/* PERFECT CIRCLE LOGO */
-.brand-logo {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 1px solid rgba(120,140,255,.6);
-  box-shadow: 0 0 18px rgba(120,140,255,.35);
-  flex-shrink: 0;
-}
-
-.brand-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-nav a {
-  color: #bfc6ff;
-  margin-left: 24px;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-}
-
-nav a:hover {
-  color: #ffffff;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
-  min-height: 100vh;
-  padding: 120px 80px;
-  max-width: 720px;
-}
-
-h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3.5rem;
-  line-height: 1.1;
-}
-
-p {
-  margin: 20px 0 40px;
-  color: #bfc6ff;
-  font-size: 1.1rem;
-}
-
-.btn {
-  padding: 14px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  margin-right: 12px;
-  font-family: 'Poppins', sans-serif;
-  display: inline-block;
-}
-
-.primary {
-  background: #6a7cff;
-  color: #fff;
-  box-shadow: 0 10px 30px rgba(106,124,255,.35);
-}
-
-.secondary {
-  border: 1px solid #6a7cff;
-  color: #6a7cff;
-}
-
-/* =========================
-   SECTIONS SHARED
-========================= */
-section {
-  position: relative;
-  z-index: 1;
-}
-
-/* =========================
-   SERVICES
-========================= */
-.services {
-  padding: 120px 80px;
-}
-
-.services-sub {
-  max-width: 600px;
-  margin-bottom: 60px;
-  color: #bfc6ff;
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-}
-
-.service-card {
-  background: linear-gradient(145deg, rgba(40,50,120,.35), rgba(10,15,40,.9));
-  border-radius: 18px;
-  padding: 30px;
-  backdrop-filter: blur(6px);
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0,0,0,.6);
-}
-
-/* =========================
-   WORKS
-========================= */
-.works {
-  padding: 120px 80px;
-}
-
-.works-sub {
-  max-width: 600px;
-  color: #bfc6ff;
-  margin-bottom: 60px;
-}
-
-.works-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
-
-.work-card {
-  background: linear-gradient(145deg, rgba(30,40,100,.35), rgba(10,15,40,.9));
-  border-radius: 20px;
-  padding: 24px;
-  backdrop-filter: blur(6px);
-}
-
-.work-thumb {
-  height: 160px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #3a46ff, #14193a);
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: .9rem;
-  color: #ffffffaa;
-}
-
-/* =========================
-   ABOUT
-========================= */
-.about {
-  padding: 120px 80px;
-  background: linear-gradient(180deg, transparent, rgba(10,14,34,.9));
-}
-
-.about-content {
-  max-width: 900px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer {
-  padding: 80px 80px 30px;
-  background: #040615;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-}
-
-.footer a {
-  color: #9aa4ff;
-  text-decoration: none;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 40px;
-  color: #8a90c7;
-  font-size: .9rem;
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-  nav {
-    padding: 20px 30px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero, section {
-    padding: 80px 30px;
-  }
-
-  h1 {
-    font-size: 2.4rem;
-  }
-
-  .footer {
-    padding: 60px 30px 30px;
-  }
-}
-
-</style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="brand">
-    <div class="brand-logo">
-      <img src="images/SRLOGO.png" alt="SR Creative Hub Logo">
-    </div>
-    <span>SR Creative Hub</span>
-  </div>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#works">Works</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <nav class="navbar container">
 
-<!-- HERO -->
-<section id="home" class="hero">
-  <h1>
-    Creative Design.<br>
-    Animation.<br>
-    Digital Experiences.
-  </h1>
-  <p>Creativity with clarity. Design with purpose.</p>
-  <a class="btn primary" href="#works">Explore Works</a>
-  <a class="btn secondary" href="#contact">Start a Project</a>
-</section>
+      <!-- Logo -->
+      <div class="logo">
+        <a href="#">SR<span>Creative</span>Hub</a>
+      </div>
 
-<!-- SERVICES -->
-<section id="services" class="services">
-  <h2>Our Services</h2>
-  <p class="services-sub">Creative design, animation & digital experiences crafted with purpose.</p>
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="btn-nav">Contact</a></li>
+      </ul>
 
-  <div class="service-grid">
-    <div class="service-card"><h3>Design</h3><p>Visual identity & creative systems.</p></div>
-    <div class="service-card"><h3>Animation</h3><p>Motion graphics & storytelling.</p></div>
-    <div class="service-card"><h3>Branding</h3><p>Meaningful brand identities.</p></div>
-    <div class="service-card"><h3>Web</h3><p>Modern responsive experiences.</p></div>
-  </div>
-</section>
+      <!-- Hamburger (Mobile) -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-<!-- WORKS -->
-<section id="works" class="works">
-  <h2>Featured Works</h2>
-  <p class="works-sub">Selected creative projects.</p>
+    </nav>
+  </header>
+  <!-- ========================================== -->
 
-  <div class="works-grid">
-    <div class="work-card">
-      <div class="work-thumb">IMAGE</div>
-      <h3>Aura Bliss</h3>
-      <p>Brand identity</p>
-    </div>
-    <div class="work-card">
-      <div class="work-thumb">IMAGE</div>
-      <h3>PixelFlow</h3>
-      <p>Motion graphics</p>
-    </div>
-    <div class="work-card">
-      <div class="work-thumb">IMAGE</div>
-      <h3>ZenTech</h3>
-      <p>Web experience</p>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about">
-  <div class="about-content">
-    <h2>About SR Creative Hub</h2>
-    <p>We craft meaningful digital experiences blending design, animation, and technology.</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer id="contact" class="footer">
-  <div class="footer-container">
-    <div>
-      <h3>SR Creative Hub</h3>
-      <p>Creativity with clarity.</p>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <a href="mailto:srcreativehub@gmail.com">Email</a><br>
-      <a href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
-    </div>
-    <div>
-      <h4>Social</h4>
-      <a href="#">Instagram</a><br>
-      <a href="#">LinkedIn</a><br>
-      <a href="#">Behance</a>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    © 2025 SR Creative Hub
-  </div>
-</footer>
-
+  <!-- JS -->
+  <script src="js/main.js"></script>
 </body>
 </html>

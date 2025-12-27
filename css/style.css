@@ -61,38 +61,67 @@ a {
   overflow: hidden;
 }
 
-/* Star layers */
-.stars {
+/* ===============================
+   ABSTRACT COSMIC BACKGROUND
+================================ */
+.cosmic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    circle at top left,
+    #11162a,
+    #0b0f1a 60%,
+    #070a14
+  );
+  overflow: hidden;
+}
+
+/* Floating Blobs */
+.blob {
   position: absolute;
-  width: 200%;
-  height: 200%;
-  background-image: radial-gradient(1px 1px at 20px 30px, #ffffff, transparent),
-                    radial-gradient(1px 1px at 80px 120px, #ffffff, transparent),
-                    radial-gradient(1px 1px at 160px 90px, #ffffff, transparent);
-  background-repeat: repeat;
-  animation: drift 120s linear infinite;
-  opacity: 0.25;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.55;
+  animation: float 28s infinite ease-in-out;
 }
 
-.stars-sm {
-  opacity: 0.15;
-  animation-duration: 180s;
+/* Individual blobs */
+.blob-1 {
+  top: -120px;
+  left: -120px;
+  background: radial-gradient(circle, #6ae3ff, transparent 70%);
 }
 
-.stars-lg {
-  opacity: 0.35;
-  animation-duration: 90s;
+.blob-2 {
+  bottom: -140px;
+  right: -100px;
+  background: radial-gradient(circle, #c77dff, transparent 70%);
+  animation-delay: -10s;
 }
 
-/* Motion */
-@keyframes drift {
-  from {
-    transform: translate(0, 0);
+.blob-3 {
+  top: 40%;
+  left: 60%;
+  background: radial-gradient(circle, #4f8cff, transparent 70%);
+  animation-delay: -18s;
+}
+
+/* Animation */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
   }
-  to {
-    transform: translate(-200px, -200px);
+  50% {
+    transform: translate(60px, -40px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
   }
 }
+
 
 /* ===============================
    4. HEADER / NAVBAR

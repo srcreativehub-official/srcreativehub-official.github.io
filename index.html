@@ -12,8 +12,12 @@
 <style>
 
 /* =========================
-   GLOBAL
+   GLOBAL RESET
 ========================= */
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -21,35 +25,42 @@ html {
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top, #1a1f3c, #0b1020);
   color: #ffffff;
   overflow-x: hidden;
+  background: #050714;
 }
 
-/* Galaxy background */
+/* =========================
+   GALAXY BACKGROUND (REAL)
+========================= */
+
+/* Deep space gradient */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image:
-    url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars.png"),
-    radial-gradient(circle at top, #1a1f3c, #0b1020);
-  background-size: cover;
-  background-position: center;
-  opacity: 0.35;
-  z-index: 0;
-  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(120,140,255,.18), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(90,120,255,.12), transparent 45%),
+    radial-gradient(circle at bottom, #0b1020, #050714 70%);
+  z-index: -3;
 }
 
+/* Stars layer */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/stars.png");
+  background-size: 1200px;
+  opacity: 0.35;
+  animation: starsMove 180s linear infinite;
+  z-index: -2;
+}
 
 @keyframes starsMove {
   from { transform: translateY(0); }
-  to { transform: translateY(-2000px); }
-}
-
-section, nav, footer {
-  position: relative;
-  z-index: 1;
+  to   { transform: translateY(-2000px); }
 }
 
 /* =========================
@@ -70,9 +81,21 @@ nav {
   font-weight: 600;
 }
 
-.brand img {
-  width: 38px;
-  height: 38px;
+/* PERFECT CIRCLE LOGO */
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(120,140,255,.6);
+  box-shadow: 0 0 18px rgba(120,140,255,.35);
+  flex-shrink: 0;
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 nav a {
@@ -108,7 +131,7 @@ p {
 }
 
 .btn {
-  padding: 14px 26px;
+  padding: 14px 28px;
   border-radius: 30px;
   text-decoration: none;
   margin-right: 12px;
@@ -119,11 +142,20 @@ p {
 .primary {
   background: #6a7cff;
   color: #fff;
+  box-shadow: 0 10px 30px rgba(106,124,255,.35);
 }
 
 .secondary {
   border: 1px solid #6a7cff;
   color: #6a7cff;
+}
+
+/* =========================
+   SECTIONS SHARED
+========================= */
+section {
+  position: relative;
+  z-index: 1;
 }
 
 /* =========================
@@ -133,15 +165,10 @@ p {
   padding: 120px 80px;
 }
 
-.services h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.8rem;
-}
-
 .services-sub {
-  color: #bfc6ff;
   max-width: 600px;
   margin-bottom: 60px;
+  color: #bfc6ff;
 }
 
 .service-grid {
@@ -151,15 +178,16 @@ p {
 }
 
 .service-card {
-  background: linear-gradient(145deg, #151a3a, #0e1229);
+  background: linear-gradient(145deg, rgba(40,50,120,.35), rgba(10,15,40,.9));
   border-radius: 18px;
   padding: 30px;
+  backdrop-filter: blur(6px);
   transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,.6);
 }
 
 /* =========================
@@ -182,21 +210,22 @@ p {
 }
 
 .work-card {
-  background: linear-gradient(145deg, #14193a, #0c1028);
+  background: linear-gradient(145deg, rgba(30,40,100,.35), rgba(10,15,40,.9));
   border-radius: 20px;
   padding: 24px;
+  backdrop-filter: blur(6px);
 }
 
 .work-thumb {
   height: 160px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #2a2f5f, #14193a);
+  background: linear-gradient(135deg, #3a46ff, #14193a);
   margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8f98ff;
   font-size: .9rem;
+  color: #ffffffaa;
 }
 
 /* =========================
@@ -204,23 +233,19 @@ p {
 ========================= */
 .about {
   padding: 120px 80px;
-  background: linear-gradient(145deg, #0c1028, #0a0e22);
+  background: linear-gradient(180deg, transparent, rgba(10,14,34,.9));
 }
 
 .about-content {
   max-width: 900px;
 }
 
-.about p {
-  line-height: 1.8;
-}
-
 /* =========================
    FOOTER
 ========================= */
 .footer {
-  background: linear-gradient(145deg, #070a1a, #040615);
   padding: 80px 80px 30px;
+  background: #040615;
 }
 
 .footer-container {
@@ -245,7 +270,6 @@ p {
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-
   nav {
     padding: 20px 30px;
     flex-direction: column;
@@ -273,7 +297,9 @@ p {
 <!-- NAV -->
 <nav>
   <div class="brand">
-    <img src="images/SRLOGO.png" alt="SR Creative Hub Logo">
+    <div class="brand-logo">
+      <img src="images/SRLOGO.png" alt="SR Creative Hub Logo">
+    </div>
     <span>SR Creative Hub</span>
   </div>
   <div>
@@ -299,9 +325,7 @@ p {
 <!-- SERVICES -->
 <section id="services" class="services">
   <h2>Our Services</h2>
-  <p class="services-sub">
-    Creative design, animation & digital experiences crafted with purpose.
-  </p>
+  <p class="services-sub">Creative design, animation & digital experiences crafted with purpose.</p>
 
   <div class="service-grid">
     <div class="service-card"><h3>Design</h3><p>Visual identity & creative systems.</p></div>
@@ -318,17 +342,17 @@ p {
 
   <div class="works-grid">
     <div class="work-card">
-      <div class="work-thumb">IMAGE PLACEHOLDER</div>
+      <div class="work-thumb">IMAGE</div>
       <h3>Aura Bliss</h3>
       <p>Brand identity</p>
     </div>
     <div class="work-card">
-      <div class="work-thumb">IMAGE PLACEHOLDER</div>
+      <div class="work-thumb">IMAGE</div>
       <h3>PixelFlow</h3>
       <p>Motion graphics</p>
     </div>
     <div class="work-card">
-      <div class="work-thumb">IMAGE PLACEHOLDER</div>
+      <div class="work-thumb">IMAGE</div>
       <h3>ZenTech</h3>
       <p>Web experience</p>
     </div>
@@ -339,10 +363,7 @@ p {
 <section class="about">
   <div class="about-content">
     <h2>About SR Creative Hub</h2>
-    <p>
-      We craft meaningful digital experiences blending design,
-      animation, and technology.
-    </p>
+    <p>We craft meaningful digital experiences blending design, animation, and technology.</p>
   </div>
 </section>
 
@@ -355,13 +376,13 @@ p {
     </div>
     <div>
       <h4>Contact</h4>
-      <a href="mailto:srcreativehub@gmail.com">Email</a>
+      <a href="mailto:srcreativehub@gmail.com">Email</a><br>
       <a href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
     </div>
     <div>
       <h4>Social</h4>
-      <a href="#">Instagram</a>
-      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a><br>
+      <a href="#">LinkedIn</a><br>
       <a href="#">Behance</a>
     </div>
   </div>

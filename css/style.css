@@ -414,6 +414,51 @@ a {
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
 }
+/* ===============================
+   PHILOSOPHY SECTION
+================================ */
+.philosophy {
+  padding: 7rem 0;
+  text-align: center;
+}
+
+.philosophy-content {
+  max-width: 820px;
+}
+
+/* Label */
+.philosophy-label {
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Quote */
+.philosophy h2 {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 1.8rem;
+}
+
+.philosophy h2 span {
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtext */
+.philosophy-subtext {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
 
 /* ===============================
    5. GLASS EFFECT ON SCROLL

@@ -459,6 +459,63 @@ a {
   color: var(--text-muted);
   line-height: 1.7;
 }
+
+
+/* ===============================
+   CONTACT SECTION
+================================ */
+.contact {
+  padding: 7rem 0;
+}
+
+.contact-content {
+  max-width: 720px;
+}
+
+/* Form */
+.contact-form {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Focus */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Button spacing */
+.contact-form button {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+/* ===============================
+   8. FOOTER SECTION
+
+
 /* ===============================
    FOOTER
 ================================ */

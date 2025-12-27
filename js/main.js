@@ -16,3 +16,5 @@ window.addEventListener('scroll', () => {
     header.classList.remove('scrolled');
   }
 });
+// Auto update footer year
+document.getElementById('year').textContent = new Date().getFullYear();

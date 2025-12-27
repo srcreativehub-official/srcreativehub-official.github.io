@@ -162,6 +162,49 @@
   line-height: 1.8;
   margin-bottom: 18px;
 }
+.footer {
+  background: linear-gradient(145deg, #0a0e22, #070a1a);
+  padding: 70px 80px 30px;
+  margin-top: 100px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer h3,
+.footer h4 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  color: #bfc6ff;
+  line-height: 1.6;
+}
+
+.footer a {
+  display: block;
+  color: #9aa4ff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #8a90c7;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px;
+}
 
   </style>
 </head>
@@ -252,6 +295,42 @@
     </p>
   </div>
 </section>
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-brand">
+      <h3>SR Creative Hub</h3>
+      <p>
+        Creativity with clarity.  
+        Design with purpose.
+      </p>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>
+        📧 <a href="mailto:srcreativehub@gmail.com">srcreativehub@gmail.com</a>
+      </p>
+      <p>
+        💬 <a href="https://wa.me/91XXXXXXXXXX" target="_blank">
+          WhatsApp Us
+        </a>
+      </p>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow</h4>
+      <a href="#" target="_blank">Instagram</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="#" target="_blank">Behance</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 SR Creative Hub. All rights reserved.
+  </div>
+</footer>
 
 </body>
 </html>

@@ -205,6 +205,95 @@
   border-top: 1px solid rgba(255,255,255,0.08);
   padding-top: 20px;
 }
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    padding: 20px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav div {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 80px 30px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .btn {
+    margin-top: 15px;
+  }
+
+  section {
+    padding: 80px 30px;
+  }
+
+  .services,
+  .works,
+  .about {
+    padding: 80px 30px;
+  }
+
+  .services h2,
+  .works h2,
+  .about h2 {
+    font-size: 2.2rem;
+  }
+
+  .services-grid,
+  .works-grid,
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card,
+  .work-card {
+    padding: 30px;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  .footer {
+    padding: 60px 30px 30px;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  nav strong {
+    font-size: 1.2rem;
+  }
+
+}
 
   </style>
 </head>

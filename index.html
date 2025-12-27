@@ -55,6 +55,50 @@
       border: 1px solid #6a7cff;
       color: #6a7cff;
     }
+    .services {
+  padding: 100px 80px;
+}
+
+.services h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.services-sub {
+  color: #bfc6ff;
+  margin-bottom: 60px;
+  max-width: 600px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: linear-gradient(145deg, #151a3a, #0e1229);
+  border-radius: 18px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.service-card h3 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: #bfc6ff;
+  line-height: 1.6;
+}
+
   </style>
 </head>
 <body>
@@ -78,6 +122,34 @@
   <p>Creativity with clarity. Design with purpose.</p>
   <a class="btn primary" href="#">Explore Works</a>
   <a class="btn secondary" href="#">Start a Project</a>
+</section>
+<section class="services">
+  <h2>Our Services</h2>
+  <p class="services-sub">
+    Creative design, animation & digital experiences crafted with purpose.
+  </p>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>Design</h3>
+      <p>Creative visual designs that capture attention and tell your brand story.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Animation</h3>
+      <p>Engaging motion graphics and animations that bring ideas to life.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Branding</h3>
+      <p>Strong brand identities that connect emotionally with your audience.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Web Experiences</h3>
+      <p>Modern, responsive websites designed for performance and clarity.</p>
+    </div>
+  </div>
 </section>
 
 </body>

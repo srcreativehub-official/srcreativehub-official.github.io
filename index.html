@@ -9,6 +9,8 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
 </head>
 
 <body>
@@ -171,6 +173,43 @@
   </div>
 </section>
 <!-- ===================================================== -->
+
+<!-- ================= 3D CHARACTER SHOWCASE ================= -->
+<section class="model-showcase" id="model">
+  <div class="container model-content">
+
+    <div class="model-text">
+      <h2>Interactive 3D Character</h2>
+      <p>
+        We design and animate custom 3D characters for storytelling,
+        branding, spiritual narratives, and cinematic experiences.
+      </p>
+      <p>
+        Rotate, zoom, and explore the character — this is exactly how
+        we present real production-ready assets to our clients.
+      </p>
+      <a href="#contact" class="btn-primary">Request Custom Character</a>
+    </div>
+
+    <div class="model-viewer-wrapper">
+      <model-viewer
+        src="assets/models/character.glb"
+        alt="SR Creative Hub 3D Character"
+        camera-controls
+        auto-rotate
+        rotation-per-second="20deg"
+        shadow-intensity="1"
+        exposure="1"
+        environment-image="neutral"
+        disable-pan
+        style="width: 100%; height: 480px;">
+      </model-viewer>
+    </div>
+
+  </div>
+</section>
+<!-- ========================================================= -->
+
 
 <!-- ================= PHILOSOPHY SECTION ================= -->
 <section class="philosophy" id="about">
